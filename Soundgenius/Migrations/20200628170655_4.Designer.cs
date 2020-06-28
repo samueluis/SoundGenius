@@ -10,8 +10,8 @@ using Soundgenius.Data;
 namespace Soundgenius.Migrations
 {
     [DbContext(typeof(SoundgeniusDB))]
-    [Migration("20200628141546_2")]
-    partial class _2
+    [Migration("20200628170655_4")]
+    partial class _4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -94,6 +94,88 @@ namespace Soundgenius.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Faixas");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Autor = "Nirvana",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Grunge",
+                            Titulo = "The man who sold the word"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Autor = "Nirvana",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Grunge",
+                            Titulo = "About a girl"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Autor = "Nirvana",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Grunge",
+                            Titulo = "you know you are right"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Autor = "Foo Figthers",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Rock Alternativo",
+                            Titulo = "Everlong"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Autor = "Foo Figthers",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Rock Alternativo",
+                            Titulo = "Best of you"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Autor = "Foo Figthers",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Rock Alternativo",
+                            Titulo = "Pretender"
+                        },
+                        new
+                        {
+                            ID = 7,
+                            Autor = "Asap Rocky",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Hip hop",
+                            Titulo = "Peso"
+                        },
+                        new
+                        {
+                            ID = 8,
+                            Autor = "Asap Rocky",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Hip hop",
+                            Titulo = "PMW"
+                        },
+                        new
+                        {
+                            ID = 9,
+                            Autor = "Asap Rocky",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Hip hop",
+                            Titulo = "lVL"
+                        },
+                        new
+                        {
+                            ID = 10,
+                            Autor = "Juice world",
+                            FicheiroImg = "dsfhshdfs",
+                            Genero = "Hip hop",
+                            Titulo = "Bandid"
+                        });
                 });
 
             modelBuilder.Entity("Soundgenius.Models.Utilizador", b =>
@@ -102,6 +184,9 @@ namespace Soundgenius.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Autor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContaFacebook")
                         .HasColumnType("nvarchar(max)");
@@ -115,9 +200,6 @@ namespace Soundgenius.Migrations
                     b.Property<string>("MusicaPerf")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Autor")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ID");
 
                     b.ToTable("Utilizador");
@@ -126,7 +208,7 @@ namespace Soundgenius.Migrations
             modelBuilder.Entity("Soundgenius.Models.AlbumFaixas", b =>
                 {
                     b.HasOne("Soundgenius.Models.Albuns", "Album")
-                        .WithMany("ListaFaixas")
+                        .WithMany("AlbumFaixas")
                         .HasForeignKey("AlbumFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

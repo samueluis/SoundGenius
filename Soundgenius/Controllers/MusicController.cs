@@ -24,7 +24,7 @@ namespace Soundgenius.Controllers
         // GET: Faixas
         public async Task<IActionResult> Index()
         {
-            // em SQL, db.music.ToListAsync() significa:
+            // em SQL, db.music.ToListAsync() sigGeneroica:
             // SELECT * FROM Faixas
 
             return View(await db.Faixas.ToListAsync());
@@ -38,16 +38,16 @@ namespace Soundgenius.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            // em SQL, db.Faixas.FirstOrDefaultAsync(m => m.ID == id) significa
+            // em SQL, db.Faixas.FirstOrDefaultAsync(m => m.ID == id) sigGeneroica
             // SELECT * FROM Faixas d WHERE d.ID = id
             var faixa = await db.Faixas.FirstOrDefaultAsync(d => d.ID == id);
 
             if (faixa == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
             return View(faixa);
@@ -66,7 +66,7 @@ namespace Soundgenius.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add([Bind("ID,Titulo,Autor,Genero,FicheiroImg")] Faixas faixa)
+        public async Task<IActionResult> Add( Faixas faixa)
         {
 
             if (ModelState.IsValid)
@@ -89,15 +89,15 @@ namespace Soundgenius.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            var faixas = await db.Faixas.FindAsync(id);
-            if (faixas == null)
+            var faixa = await db.Faixas.FindAsync(id);
+            if (faixa == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
-            return View(faixas);
+            return View(faixa);
         }
 
 
@@ -106,11 +106,11 @@ namespace Soundgenius.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,NIF")] Faixas faixas)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Autor,Titulo,Genero,FicheiroImg")] Faixas faixas)
         {
             if (id != faixas.ID)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
             if (ModelState.IsValid)
@@ -124,7 +124,7 @@ namespace Soundgenius.Controllers
                 {
                     if (!FaixasExists(faixas.ID))
                     {
-                        return NotFound();
+                        return RedirectToAction("Index");
                     }
                     else
                     {
@@ -143,17 +143,17 @@ namespace Soundgenius.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            var faixas = await db.Faixas
+            var faixa = await db.Faixas
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (faixas == null)
+            if (faixa == null)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
 
-            return View(faixas);
+            return View(faixa);
         }
 
 

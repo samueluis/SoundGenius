@@ -30,7 +30,7 @@ namespace Soundgenius.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(nullable: true),
-                    Nome = table.Column<string>(nullable: true),
+                    Autor = table.Column<string>(nullable: true),
                     MusicaPerf = table.Column<string>(nullable: true),
                     ContaFacebook = table.Column<string>(nullable: true),
                     Data = table.Column<DateTime>(nullable: false)

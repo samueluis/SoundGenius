@@ -8,7 +8,7 @@ namespace Soundgenius.Models
     {
         public Albuns()
         {
-            ListaFaixas = new HashSet<AlbumFaixas>();
+            AlbumFaixas = new HashSet<AlbumFaixas>();
         }
 
         [Key]
@@ -28,6 +28,6 @@ namespace Soundgenius.Models
         public Utilizador Utilizador { get; set; }
 
         //------------------------------------------------------------------------------
-        public ICollection<AlbumFaixas> ListaFaixas { get; set; }
+        public ICollection<AlbumFaixas> AlbumFaixas { get; set; }
     }
 }

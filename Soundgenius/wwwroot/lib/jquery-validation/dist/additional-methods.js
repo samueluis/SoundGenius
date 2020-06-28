@@ -714,8 +714,8 @@ $.validator.addMethod( "netmask", function( value, element ) {
  * The NIE (Número de Identificación de Extranjero) is a Spanish tax identification number assigned by the Spanish
  * authorities to any foreigner.
  *
- * The NIE is the equivalent of a Spaniards Número de Identificación Fiscal (NIF) which serves as a fiscal
- * identification number. The CIF number (Certificado de Identificación Fiscal) is equivalent to the NIF, but applies to
+ * The NIE is the equivalent of a Spaniards Número de Identificación Fiscal (Genero) which serves as a fiscal
+ * identification number. The CIF number (Certificado de Identificación Fiscal) is equivalent to the Genero, but applies to
  * companies rather than individuals. The NIE consists of an 'X' or 'Y' followed by 7 or 8 digits then another letter.
  */
 $.validator.addMethod( "nieES", function( value, element ) {
@@ -751,9 +751,9 @@ $.validator.addMethod( "nieES", function( value, element ) {
 }, "Please specify a valid NIE number." );
 
 /*
- * The Número de Identificación Fiscal ( NIF ) is the way tax identification used in Spain for individuals
+ * The Número de Identificación Fiscal ( Genero ) is the way tax identification used in Spain for individuals
  */
-$.validator.addMethod( "nifES", function( value, element ) {
+$.validator.addMethod( "GeneroES", function( value, element ) {
 	"use strict";
 
 	if ( this.optional( element ) ) {
@@ -767,19 +767,19 @@ $.validator.addMethod( "nifES", function( value, element ) {
 		return false;
 	}
 
-	// Test NIF
+	// Test Genero
 	if ( /^[0-9]{8}[A-Z]{1}$/.test( value ) ) {
 		return ( "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 0 ) % 23 ) === value.charAt( 8 ) );
 	}
 
-	// Test specials NIF (starts with K, L or M)
+	// Test specials Genero (starts with K, L or M)
 	if ( /^[KLM]{1}/.test( value ) ) {
 		return ( value[ 8 ] === "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 1 ) % 23 ) );
 	}
 
 	return false;
 
-}, "Please specify a valid NIF number." );
+}, "Please specify a valid Genero number." );
 
 /*
  * Numer identyfikacji podatkowej ( NIP ) is the way tax identification used in Poland for companies

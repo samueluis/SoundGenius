@@ -115,7 +115,7 @@ namespace Soundgenius.Migrations
                     b.Property<string>("MusicaPerf")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Autor")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
