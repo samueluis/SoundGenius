@@ -21,9 +21,9 @@ namespace Soundgenius.Models
         public string FicheiroImg { get; set; }
 
         // FK para a 'tabela' dos Faixas
-        [ForeignKey("Faixas")]
-        public int FaixasFK { get; set; }
-        public virtual Faixas Faixas { get; set; }
+        [ForeignKey("Artista")]
+        public int ArtistaFK { get; set; }
+        public virtual Artista Artista { get; set; }
 
         //------------------------------------------------------------------------------
         public ICollection<AlbumFaixas> AlbumFaixas { get; set; }

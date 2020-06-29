@@ -15,7 +15,7 @@ namespace Soundgenius.Models
 
         public Artista()
         {
-            ListaAlbuns = new HashSet<Albuns>();
+            Albuns = new HashSet<Albuns>();
         }
 
         /// <summary>
@@ -46,6 +46,6 @@ namespace Soundgenius.Models
         /// <summary>
         /// lista de Animais de um determinado Artista
         /// </summary>
-        public virtual ICollection<Albuns> ListaAlbuns { get; set; }
+        public virtual ICollection<Albuns> Albuns { get; set; }
     }
 }
