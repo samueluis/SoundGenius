@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Soundgenius.Data;
 
 namespace Soundgenius.Migrations
 {
     [DbContext(typeof(SoundgeniusDB))]
-    partial class SoundgeniusDBModelSnapshot : ModelSnapshot
+    [Migration("20200629001521_1")]
+    partial class _1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -229,7 +231,7 @@ namespace Soundgenius.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Artista");
+                    b.ToTable("Artistas");
 
                     b.HasData(
                         new

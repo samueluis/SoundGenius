@@ -58,7 +58,7 @@ namespace Soundgenius
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Music}/{action=Index}/{id?}");
+                    pattern: "{controller=Artistas}/{action=Index}/{id?}");
             });
         }
     }

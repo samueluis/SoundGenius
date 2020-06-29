@@ -20,6 +20,11 @@ namespace Soundgenius.Models
 
         public string FicheiroImg { get; set; }
 
+        // FK para a 'tabela' dos Faixas
+        [ForeignKey("Faixas")]
+        public int FaixasFK { get; set; }
+        public virtual Faixas Faixas { get; set; }
+
         //------------------------------------------------------------------------------
         public ICollection<AlbumFaixas> AlbumFaixas { get; set; }
     }

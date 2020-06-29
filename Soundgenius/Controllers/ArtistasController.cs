@@ -10,16 +10,16 @@ using Soundgenius.Models;
 
 namespace Soundgenius.Controllers
 {
-    public class MusicController : Controller
+    public class ArtistasController : Controller
     {
         private readonly SoundgeniusDB db;
 
-        public MusicController (SoundgeniusDB context)
+        public ArtistasController(SoundgeniusDB context)
         {
             db = context;
         }
 
-         
+
 
         // GET: Faixas
         public async Task<IActionResult> Index()
@@ -27,7 +27,7 @@ namespace Soundgenius.Controllers
             // em SQL, db.music.ToListAsync() sigGeneroica:
             // SELECT * FROM Faixas
 
-            return View(await db.Faixas.ToListAsync());
+            return View(await db.Artista.ToListAsync());
         }
 
 
@@ -43,14 +43,14 @@ namespace Soundgenius.Controllers
 
             // em SQL, db.Faixas.FirstOrDefaultAsync(m => m.ID == id) sigGeneroica
             // SELECT * FROM Faixas d WHERE d.ID = id
-            var faixa = await db.Faixas.FirstOrDefaultAsync(d => d.ID == id);
+            var artista = await db.Artista.FirstOrDefaultAsync(d => d.ID == id);
 
-            if (faixa == null)
+            if (artista == null)
             {
                 return RedirectToAction("Index");
             }
 
-            return View(faixa);
+            return View(artista);
         }
 
         // GET: Faixas/Add
@@ -66,19 +66,19 @@ namespace Soundgenius.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add( Faixas faixa)
+        public async Task<IActionResult> Add(Artista artista)
         {
 
             if (ModelState.IsValid)
             {
-                db.Add(faixa);
+                db.Add(artista);
                 await db.SaveChangesAsync(); // commit
                 return RedirectToAction(nameof(Index));
             }
 
             // alguma coisa correu mal.
             // devolve-se o controlo da aplicação à View
-            return View(faixa);
+            return View(artista);
         }
 
 
@@ -92,12 +92,12 @@ namespace Soundgenius.Controllers
                 return RedirectToAction("Index");
             }
 
-            var faixa = await db.Faixas.FindAsync(id);
-            if (faixa == null)
+            var artista = await db.Artista.FindAsync(id);
+            if (artista == null)
             {
                 return RedirectToAction("Index");
             }
-            return View(faixa);
+            return View(artista);
         }
 
 
@@ -106,9 +106,9 @@ namespace Soundgenius.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Titulo,Genero,FicheiroImg")] Faixas faixas)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,Sexo,FicheiroImg")] Artista artistas)
         {
-            if (id != faixas.ID)
+            if (id != artistas.ID)
             {
                 return RedirectToAction("Index");
             }
@@ -117,12 +117,12 @@ namespace Soundgenius.Controllers
             {
                 try
                 {
-                    db.Update(faixas);
+                    db.Update(artistas);
                     await db.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FaixasExists(faixas.ID))
+                    if (!ArtistasExists(artistas.ID))
                     {
                         return RedirectToAction("Index");
                     }
@@ -133,7 +133,7 @@ namespace Soundgenius.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(faixas);
+            return View(artistas);
         }
 
 
@@ -146,14 +146,14 @@ namespace Soundgenius.Controllers
                 return RedirectToAction("Index");
             }
 
-            var faixa = await db.Faixas
+            var artista = await db.Artista
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (faixa == null)
+            if (artista == null)
             {
                 return RedirectToAction("Index");
             }
 
-            return View(faixa);
+            return View(artista);
         }
 
 
@@ -163,17 +163,17 @@ namespace Soundgenius.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var faixas = await db.Faixas.FindAsync(id);
-            db.Faixas.Remove(faixas);
+            var artistas = await db.Artista.FindAsync(id);
+            db.Artista.Remove(artistas);
             await db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
 
 
-        private bool FaixasExists(int id)
+        private bool ArtistasExists(int id)
         {
-            return db.Faixas.Any(e => e.ID == id);
+            return db.Artista.Any(e => e.ID == id);
         }
     }
 }

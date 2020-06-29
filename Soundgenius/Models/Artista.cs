@@ -40,6 +40,8 @@ namespace Soundgenius.Models
         [StringLength(1, MinimumLength = 1)]
         public string Sexo { get; set; }
 
+        public string FicheiroImg { get; set; }
+
 
         /// <summary>
         /// lista de Animais de um determinado Artista

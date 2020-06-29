@@ -12,13 +12,14 @@ namespace Soundgenius.Models
         [Key]
         public int ID { get; set; }
 
+
         [ForeignKey(nameof(Album))]
         public int AlbumFK { get; set; }
-        public Albuns Album { get; set; }
+        public virtual Albuns Album { get; set; }
 
         [ForeignKey(nameof(Faixa))]
         public int FaixaFK { get; set; }
-        public Faixas Faixa { get; set; }
+        public virtual Faixas Faixa { get; set; }
 
 
     }
