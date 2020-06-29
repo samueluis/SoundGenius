@@ -41,6 +41,7 @@ namespace Soundgenius.Controllers
                 return RedirectToAction("Index");
             }
 
+
             // em SQL, db.Faixas.FirstOrDefaultAsync(m => m.ID == id) sigGeneroica
             // SELECT * FROM Faixas d WHERE d.ID = id
             var faixa = await db.Faixas.FirstOrDefaultAsync(d => d.ID == id);

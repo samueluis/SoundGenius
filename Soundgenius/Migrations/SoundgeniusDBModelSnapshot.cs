@@ -132,7 +132,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 1,
                             ArtistaFK = 1,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "MTV Unplugged",
                             Genero = "Grunge",
                             Titulo = "MTV Unplugged"
                         },
@@ -140,7 +140,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 2,
                             ArtistaFK = 1,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Bleach",
                             Genero = "Grunge",
                             Titulo = "Bleach"
                         },
@@ -148,7 +148,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 3,
                             ArtistaFK = 1,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Nevermind",
                             Genero = "Grunge",
                             Titulo = "Nevermind"
                         },
@@ -156,7 +156,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 4,
                             ArtistaFK = 2,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "The color and the shape",
                             Genero = "Rock Alternativo ",
                             Titulo = "The color and the shape"
                         },
@@ -164,7 +164,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 5,
                             ArtistaFK = 2,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "In Your Honor",
                             Genero = "Rock Alternativo ",
                             Titulo = " In Your Honor"
                         },
@@ -172,7 +172,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 6,
                             ArtistaFK = 2,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Foo Fighters Echoes, Silence, Patience & Grace",
                             Genero = "Rock Alternativo ",
                             Titulo = "Foo Fighters Echoes, Silence, Patience & Grace"
                         },
@@ -180,7 +180,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 7,
                             ArtistaFK = 3,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Testing",
                             Genero = "Hip hop",
                             Titulo = "Testing"
                         },
@@ -188,7 +188,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 8,
                             ArtistaFK = 3,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Long. Live. ASAP",
                             Genero = "Hip hop",
                             Titulo = "Long. Live. ASAP"
                         },
@@ -196,7 +196,7 @@ namespace Soundgenius.Migrations
                         {
                             ID = 9,
                             ArtistaFK = 4,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "goodbye & good riddance",
                             Genero = "Hip hop ",
                             Titulo = "goodbye & good riddance"
                         });
@@ -229,28 +229,28 @@ namespace Soundgenius.Migrations
                         new
                         {
                             ID = 1,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Nirvana",
                             Nome = "Nirvana",
                             Sexo = "M"
                         },
                         new
                         {
                             ID = 2,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Foo Figthers",
                             Nome = "Foo Figthers",
                             Sexo = "M"
                         },
                         new
                         {
                             ID = 3,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Asap Rocky",
                             Nome = "Asap Rocky",
                             Sexo = "M"
                         },
                         new
                         {
                             ID = 4,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Juice wrld",
                             Nome = "Juice wrld",
                             Sexo = "M"
                         });
@@ -280,42 +280,42 @@ namespace Soundgenius.Migrations
                         new
                         {
                             ID = 1,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "MTV Unplugged",
                             Genero = "Grunge",
                             Titulo = "The man who sold the word"
                         },
                         new
                         {
                             ID = 2,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Bleach",
                             Genero = "Grunge",
                             Titulo = "About a girl"
                         },
                         new
                         {
                             ID = 3,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Nevermind",
                             Genero = "Grunge",
                             Titulo = "come as you are"
                         },
                         new
                         {
                             ID = 4,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "The color and the shape",
                             Genero = "Rock Alternativo",
                             Titulo = "Everlong"
                         },
                         new
                         {
                             ID = 5,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "In Your Honor",
                             Genero = "Rock Alternativo",
                             Titulo = "Best of you"
                         },
                         new
                         {
                             ID = 6,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Testing",
                             Genero = "Rock Alternativo",
                             Titulo = "Pretender"
                         },
@@ -329,21 +329,21 @@ namespace Soundgenius.Migrations
                         new
                         {
                             ID = 8,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Long. Live. ASAP",
                             Genero = "Hip hop",
                             Titulo = "PMW"
                         },
                         new
                         {
                             ID = 9,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "Long. Live. ASAP",
                             Genero = "Hip hop",
                             Titulo = "lVL"
                         },
                         new
                         {
                             ID = 10,
-                            FicheiroImg = "dsfhshdfs",
+                            FicheiroImg = "goodbye & good riddance",
                             Genero = "Hip hop",
                             Titulo = "Wasted"
                         });
