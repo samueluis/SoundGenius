@@ -32,8 +32,8 @@ namespace Soundgenius.Data
                new Faixas { ID = 3, Titulo = "come as you are", Genero = "Grunge", FicheiroImg = "Nevermind" },
                new Faixas { ID = 4, Titulo = "Everlong", Genero = "Rock Alternativo", FicheiroImg = "The color and the shape" },
                new Faixas { ID = 5, Titulo = "Best of you", Genero = "Rock Alternativo", FicheiroImg = "In Your Honor" },
-               new Faixas { ID = 6, Titulo = "Pretender", Genero = "Rock Alternativo", FicheiroImg = "Testing" },
-               new Faixas { ID = 7, Titulo = "Fukk Sleep", Genero = "Hip hop", FicheiroImg = "dsfhshdfs" },
+               new Faixas { ID = 6, Titulo = "Pretender", Genero = "Rock Alternativo", FicheiroImg = "The color and the shape" },
+               new Faixas { ID = 7, Titulo = "Fukk Sleep", Genero = "Hip hop", FicheiroImg = "Testing" },
                new Faixas { ID = 8, Titulo = "PMW", Genero = "Hip hop", FicheiroImg = "Long. Live. ASAP" },
                new Faixas { ID = 9, Titulo = "lVL", Genero = "Hip hop", FicheiroImg = "Long. Live. ASAP" },
                new Faixas { ID = 10, Titulo = "Wasted", Genero = "Hip hop", FicheiroImg = "goodbye & good riddance" }
