@@ -1,4 +1,4 @@
-﻿@model Soundgenius.Models.Faixas
+﻿@model SoundGenius.Models.Faixas
 
 @{
     ViewData["Title"] = "Detalhes de uma faixa " + Model.Titulo;
@@ -25,14 +25,14 @@
             @Html.DisplayNameFor(model => model.FicheiroImg)
         </dt>
         <dd class="col-sm-8">
-            <img src="~/Imagens/Faixas/@Model.FicheiroImg" alt="imagem da faixa @Model.Titulo" title="@Model.Titulo" />
+            <img src="~/Imagens/Faixas/@Model.FicheiroImg"height="300" width="350" alt="imagem da faixa @Model.Titulo" title="@Model.Titulo" />
         </dd>
     </dl>
 </div>
 
 <!-- outra linha de comentário -->
-@* Adicionar as consultas do veterinário *@
-<h4>Lista de consultas associadas ao/à @Model.Titulo </h4>
+@* Adicionar as album do faixa *@
+<h4>Lista de album associadas à faixa <i>@Model.Titulo</i> </h4>
 
 @if (Model.AlbumFaixas.Count == 0)
 {
@@ -46,13 +46,13 @@ else
             <th>Album</th>
             <th>Faixa</th>
         </tr>
-        @foreach (var AlbumFaixas in Model.AlbumFaixas)
-        { // listar todas as Consultas Associadas ao Veterinário que está em exibição
-    <tr>
-        <td>@AlbumFaixas.ID</td>
-        <td>@AlbumFaixas.Album.Titulo</td>
-        <td>@AlbumFaixas.Album.Artista.Nome</td>
-    </tr>
+        @foreach (var AlbumFaixa in Model.AlbumFaixas)
+        { // listar todas as faixas Associadas aos albuns que está em exibição
+            <tr>
+                <td>@AlbumFaixa.ID</td>
+                <td>@AlbumFaixa.Album.Titulo</td>
+                <td>@AlbumFaixa.Album.Artista.Nome</td>
+            </tr>
         }
     </table>
 }

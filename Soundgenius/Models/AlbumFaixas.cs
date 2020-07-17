@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Soundgenius.Models
+namespace SoundGenius.Models
 {
     public class AlbumFaixas
     {

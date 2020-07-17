@@ -1,4 +1,4 @@
-﻿@model Soundgenius.Models.Artista
+﻿@model SoundGenius.Models.Artista
 
 @{
     ViewData["Title"] = "Details";
@@ -26,7 +26,10 @@
             @Html.DisplayNameFor(model => model.FicheiroImg)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FicheiroImg)
+            @*@Html.DisplayFor(model => model.FicheiroImg)*@
+        </dd>
+        <dd class="col-sm-8">
+            <img src="~/Imagens/Artistas/@Model.FicheiroImg" height="300" width="350" alt="imagem do artista @Model.Nome" title="@Model.Nome" />
         </dd>
     </dl>
 </div>

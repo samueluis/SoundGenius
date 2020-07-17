@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Soundgenius.Models
+namespace SoundGenius.Models
 {
     public class Faixas
     {
@@ -24,7 +24,12 @@ namespace Soundgenius.Models
         public string FicheiroImg { get; set; }
 
         //---------------------------------------------------------------------------
-        public ICollection<AlbumFaixas> AlbumFaixas { get; set; }
+        public virtual ICollection<AlbumFaixas> AlbumFaixas { get; set; }
         //adicinoar comentarios 
+
+        /// <summary>
+        /// este atributo irá receber o ID do utilizador que se autentica
+        /// </summary>
+        public string UserName { get; set; }
     }
 }

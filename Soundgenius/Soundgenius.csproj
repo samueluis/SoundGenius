@@ -5,34 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200628235423_2.cs" />
-    <Compile Remove="Migrations\20200628235423_2.Designer.cs" />
-    <Compile Remove="Migrations\20200629122933_1.cs" />
-    <Compile Remove="Migrations\20200629122933_1.Designer.cs" />
-    <Compile Remove="Migrations\20200629122956_2.cs" />
-    <Compile Remove="Migrations\20200629122956_2.Designer.cs" />
-    <Compile Remove="Migrations\20200629132441_configInicial.cs" />
-    <Compile Remove="Migrations\20200629132441_configInicial.Designer.cs" />
-    <Compile Remove="Migrations\20200629151412_configInicial.cs" />
-    <Compile Remove="Migrations\20200629151412_configInicial.Designer.cs" />
-    <Compile Remove="Migrations\20200629151730_configInicial.cs" />
-    <Compile Remove="Migrations\20200629151730_configInicial.Designer.cs" />
-    <Compile Remove="Migrations\20200629152909_database.cs" />
-    <Compile Remove="Migrations\20200629152909_database.Designer.cs" />
-    <Compile Remove="Migrations\20200629173252_InicialConfig.cs" />
-    <Compile Remove="Migrations\20200629173252_InicialConfig.Designer.cs" />
-    <Compile Remove="Migrations\20200629173709_Inicial.cs" />
-    <Compile Remove="Migrations\20200629173709_Inicial.Designer.cs" />
+    <None Remove="Models\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Imagens\Users\" />
   </ItemGroup>
 
 

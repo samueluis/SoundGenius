@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Soundgenius.Data;
-using Soundgenius.Models;
+using SoundGenius.Data;
+using SoundGenius.Models;
 
-namespace Soundgenius.Controllers
+namespace SoundGenius.Controllers
+
 {
+    [Authorize]
     public class ArtistasController : Controller
     {
-        private readonly SoundgeniusDB db;
+        private readonly SoundGeniusDB db;
 
-        public ArtistasController(SoundgeniusDB context)
+        public ArtistasController(SoundGeniusDB context)
         {
             db = context;
         }
@@ -35,6 +38,11 @@ namespace Soundgenius.Controllers
 
 
         // GET: Faixas/Details/5
+        /// <summary>
+        /// Mostra os detalhes de um Dono
+        /// </summary>
+        /// <param name="id">identificador do Dono a detalhar</param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,7 +53,6 @@ namespace Soundgenius.Controllers
             // em SQL, db.Faixas.FirstOrDefaultAsync(m => m.ID == id) sigGeneroica
             // SELECT * FROM Faixas d WHERE d.ID = id
             var artista = await db.Artista.FirstOrDefaultAsync(d => d.ID == id);
-
             if (artista == null)
             {
                 return RedirectToAction("Index");

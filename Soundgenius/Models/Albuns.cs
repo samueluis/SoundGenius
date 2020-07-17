@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Soundgenius.Models
+namespace SoundGenius.Models
 {
     public class Albuns
     {
@@ -26,6 +26,6 @@ namespace Soundgenius.Models
         public virtual Artista Artista { get; set; }
 
         //------------------------------------------------------------------------------
-        public ICollection<AlbumFaixas> AlbumFaixas { get; set; }
+        public virtual ICollection<AlbumFaixas> AlbumFaixas { get; set; }
     }
 }

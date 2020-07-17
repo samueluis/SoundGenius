@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Soundgenius.Models.Artista>
+﻿@model IEnumerable<SoundGenius.Models.Artista>
 
 @{
     ViewData["Title"] = "Index";
@@ -35,7 +35,9 @@
                     @Html.DisplayFor(modelItem => item.Sexo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FicheiroImg)
+                    <a asp-action="Details" asp-route-id="@item.ID">
+                        <img src="~/Imagens/Artistas/@item.FicheiroImg" height="50" width="70" alt="imagem do artista @item.Nome" title="@item.Nome" />
+                    </a>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

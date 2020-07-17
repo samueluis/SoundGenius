@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
+using SoundGenius.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Soundgenius.Data;
 
-namespace Soundgenius
+namespace SoundGenius
 {
     public class Startup
     {
@@ -25,14 +27,21 @@ namespace Soundgenius
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<SoundGeniusDB>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                //
+                .UseLazyLoadingProxies()
+                );
+            //  services.AddDefaultIdentity<IdentityUser>( 
+            // deixei de usar a referência ao Utilizador standard para passar a usar o 'meu' novo utilizador
+            services.AddDefaultIdentity<ApplicationUser>(
+               options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()  // ativa o funcionamento dos ROLES
+                .AddEntityFrameworkStores<SoundGeniusDB>();
+
             services.AddControllersWithViews();
-
-            //****************************************************************************
-            // especificação do 'tipo' e 'localização' da BD
-            services.AddDbContext<SoundgeniusDB>(options =>
-               options.UseSqlServer(Configuration.GetConnectionString("ConnectionDB")));
-            //****************************************************************************
-
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +50,7 @@ namespace Soundgenius
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -53,12 +63,14 @@ namespace Soundgenius
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Artistas}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
